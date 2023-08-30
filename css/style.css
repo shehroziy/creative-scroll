@@ -8,6 +8,7 @@
     --index: calc(1vw + 1vh);
     --color-header: #f4efec;
     --color-text: #cdc6c3;
+    --galley-gap: calc(var(--index) * 10)
 }
 
 @font-face {
@@ -37,6 +38,7 @@ body {
      position: absolute;
      left: 37vw;
      top: 8vh;
+     z-index: -1;
 }
 
 .main-header {
@@ -53,4 +55,44 @@ body {
     width: min-content;
     bottom: 12vh;
     line-height: .9;
+}
+
+.gallery{
+    display: flex;
+    padding: calc(var(--index) * 8) 0;
+}
+
+.gallery > * {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gallery__item {
+    max-width: calc(var(--index) * 21);
+    margin-bottom: var(--galley-gap);
+    max-height: 180vh;
+    border-radius: 8px;
+}
+
+.gallery__left {
+    margin-top: calc(var(--galley-gap) * 1.75);
+}
+
+.gallery__right .gallery__item {
+    margin: 0;
+    margin-top: var(--galley-gap);
+}
+
+.text-block {
+    color: var(--color-text);
+    position: relative;
+}
+
+text-block__h {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: var(--color-header);
+    margin-bottom: 1.5rem;
 }
